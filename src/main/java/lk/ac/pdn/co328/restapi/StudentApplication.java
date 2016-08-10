@@ -5,16 +5,17 @@
 
 package lk.ac.pdn.co328.restapi;
  
+import javax.ws.rs.core.Application;
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
-import javax.ws.rs.core.Application;
  
 public class StudentApplication extends Application
 {
     private final Set<Object> singletons = new HashSet();
     private final Set<Class<?>> empty = new HashSet();
  
-    public StudentApplication() {
+    public StudentApplication() throws SQLException {
         // ADD YOUR RESTFUL RESOURCES HERE
         this.singletons.add(new StudentService());
     }
